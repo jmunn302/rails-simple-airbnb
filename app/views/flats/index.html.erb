@@ -1,0 +1,31 @@
+<div class="container m-auto mt-5">
+<h1>All Flats</h1>
+<p class="btn btn-info link">
+<%= link_to "List New flat", new_flat_path %>
+</p>
+</br>
+
+<div class="flex-wrap d-flex align-items-center justify-content-evenly mt-3">
+  <% @flats.each do |flat| %>
+    <div class="card-body shadow p-4 m-1 bg-body rounded", style="width: 500px">
+    <p class="card-title">
+  <strong><%= flat.name %></strong>
+    </p>
+    <p class="card-text">
+    <%= flat.description %>
+    </p>
+    <p class="card-text">
+      <%= flat.address %>
+    </p>
+    <div class="card-text d-flex">
+    <p class="price me-2"><i class="fas fa-dollar-sign"></i> <%= flat.price_per_night %></p><p class="people ms-2"><i class="fas fa-users"></i> <%= flat.number_of_guest %></p>
+    </div>
+    <p class="btn btn-dark link">
+    <%= link_to "View this flat", flat %>
+  </p>
+  </div>
+
+  <% end %>
+</div>
+</div>
+</div>

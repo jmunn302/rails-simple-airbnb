@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+Flat.destroy_all
+
+50.times do
+Flat.create!(
+  name: Faker::Space.constellation,
+  address: Faker::Space.galaxy,
+  description: Faker::Fantasy::Tolkien.poem,
+  price_per_night: Faker::Number.number(digits: 3),
+  number_of_guest: Faker::Number.number(digits: 1),
+  image: Faker::LoremFlickr.image(size: "500x500", search_terms: ['outer-space'])
+)
+end

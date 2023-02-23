@@ -1,0 +1,27 @@
+<%= render @flat %>
+<div class="card-body">
+<div>
+<% image = @flat.image %>
+<img src=<%="#{image}"%>>
+<h2><strong><%= @flat.name %></strong></h2>
+<p> <%= @flat.address %></p>
+</div>
+<div class="card-body">
+<h3>A bit more about this flat...</h3>
+<p><%= @flat.description %></p>
+</div>
+<div class="card-body">
+<h3>Details</h3>
+<div class="card-text d-flex">
+    <p class="price me-2"><i class="fas fa-dollar-sign"></i> <%= @flat.price_per_night %></p><p class="people ms-2"><i class="fas fa-users"></i> <%= @flat.number_of_guest %></p>
+    </div>
+    </div>
+
+
+
+<br>
+<div>
+  <%= link_to "Edit this flat", edit_flat_path(@flat) %> |
+  <%= link_to "Back to all flats", flats_path %>
+  <%= button_to "Remove this flat", @flat, method: :delete %>
+</div>
